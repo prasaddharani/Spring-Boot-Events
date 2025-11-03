@@ -13,5 +13,6 @@ public class HighValueListener {
     public void handleCreateOrderEvent(OrderCreatedEvent orderCreatedEvent) {
         log.info("High value order received with orderId: {} and amount: {}",
                 orderCreatedEvent.getOrderId(), orderCreatedEvent.getAmount());
+        throw new RuntimeException("High value orders currently not supported");
     }
 }
