@@ -16,9 +16,9 @@ public class OrderService {
     }
 
 
-    public String createOrder(String orderId) {
+    public String createOrder(String orderId, double amount) {
         log.info("Created order with orderId: {}", orderId);
-        publisher.publishEvent(new OrderCreatedEvent(orderId));
+        publisher.publishEvent(new OrderCreatedEvent(orderId, amount));
         return "Created order with orderId: " + orderId;
     }
 }

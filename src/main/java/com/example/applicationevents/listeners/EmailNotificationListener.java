@@ -12,7 +12,7 @@ public class EmailNotificationListener {
 
     @EventListener
     @Async
-    public void createOrderListener(OrderCreatedEvent orderCreatedEvent) throws InterruptedException {
+    public void handleCreateOrderEvent(OrderCreatedEvent orderCreatedEvent) throws InterruptedException {
         log.info("Sending Email notification for orderId: {}", orderCreatedEvent.getOrderId());
         Thread.sleep(3000);
         log.info("Sent Email notification for orderId: {}", orderCreatedEvent.getOrderId());
